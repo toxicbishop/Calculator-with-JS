@@ -25,14 +25,14 @@
   <tr>
     <td align="center">
       <a href="Photos-Folder/Light-mode-2.png">
-        <img src="Photos-Folder/Light-mode-2.png" alt="Light Mode-2" width="200" height="500">
+        <img src="Photos-Folder/Light-mode-2.png" alt="Light Mode-2" width="200" height="1000">
       </a>
       <br>
       <em>Light Mode</em>
     </td>
     <td align="center">
       <a href="Photos-Folder/Dark-mode-2.png">
-        <img src="Photos-Folder/Dark-mode-2.png" alt="Dark-Mode-2" width="200" height="500">
+        <img src="Photos-Folder/Dark-mode-2.png" alt="Dark-Mode-2" width="200" height="1000">
       </a>
       <br>
       <em>Dark Mode</em>

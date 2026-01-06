@@ -1,0 +1,232 @@
+body {
+  background-color: hsl(0, 0%, 10%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  transition: background-color 0.3s ease;
+}
+
+body.light-mode {
+  background-color: hsl(0, 0%, 95%);
+}
+
+#theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background-color: hsl(35, 100%, 50%);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  width: auto;
+  height: auto;
+}
+
+#theme-toggle:hover {
+  background-color: hsl(35, 100%, 60%);
+}
+
+body.light-mode #theme-toggle {
+  background-color: hsl(220, 20%, 40%);
+}
+
+body.light-mode #theme-toggle:hover {
+  background-color: hsl(220, 20%, 50%);
+}
+#calculator-app {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: hsl(0, 0%, 20%);
+  border-radius: 15px;
+  box-shadow: 0 0 10px hsla(0, 0%, 15%, 0.5);
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.light-mode #calculator-app {
+  background-color: hsl(0, 0%, 95%);
+  box-shadow: 0 0 10px hsla(0, 0%, 50%, 0.3);
+}
+#display {
+  width: 100%;
+  height: 100px;
+  background-color: hsl(0, 0%, 20%);
+  color: wheat;
+  font-size: 5rem;
+  text-align: left;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  overflow-x: auto;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.light-mode #display {
+  background-color: hsl(0, 0%, 90%);
+  color: hsl(0, 0%, 20%);
+}
+
+#keys {
+  display: grid;
+  /* Create 4 equal columns */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  padding: 25px;
+  margin-top: 20px;
+}
+
+button {
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  border: none;
+  background-color: hsl(0, 0%, 30%);
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: hsl(30, 0%, 40%);
+}
+button:active {
+  background-color: hsl(30, 0%, 50%);
+}
+
+body.light-mode button {
+  background-color: hsl(0, 0%, 80%);
+  color: hsl(0, 0%, 20%);
+}
+
+body.light-mode button:hover {
+  background-color: hsl(0, 0%, 70%);
+}
+
+body.light-mode button:active {
+  background-color: hsl(0, 0%, 60%);
+}
+
+.operator-btn {
+  background-color: hsl(35, 100%, 50%);
+}
+.operator-btn:hover {
+  background-color: hsl(35, 100%, 60%);
+}
+.operator-btn:active {
+  background-color: hsl(35, 100%, 70%);
+}
+
+body.light-mode .operator-btn {
+  background-color: hsl(35, 100%, 50%);
+}
+
+body.light-mode .operator-btn:hover {
+  background-color: hsl(35, 100%, 45%);
+}
+
+body.light-mode .operator-btn:active {
+  background-color: hsl(35, 100%, 40%);
+}
+/* --- TOGGLE SWITCH STYLES --- */
+.theme-switch-wrapper {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.theme-switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 70px;
+}
+
+.theme-switch input {
+  display: none; /* Hide default checkbox */
+}
+
+.slider {
+  background-color: #ccc;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: 0.4s;
+  border-radius: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5px;
+}
+
+/* The "Ball" that moves */
+.slider:before {
+  background-color: white;
+  bottom: 4px;
+  content: "";
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: 0.4s;
+  width: 26px;
+  border-radius: 50%;
+  z-index: 2; /* Ensure ball is on top */
+}
+
+/* Default State (Light Mode / Unchecked) */
+.slider {
+  background-color: #3b5bdb; /* Blue background */
+}
+
+.icon-sun {
+  color: #f1c40f; /* Yellow Sun */
+  z-index: 1;
+  transform: scale(0.8);
+  margin-left: 2px;
+  transition: 0.3s;
+}
+
+.icon-moon {
+  color: white;
+  z-index: 1;
+  transform: scale(0.8);
+  margin-right: 2px;
+  opacity: 0.5; /* Dimmed when inactive */
+  transition: 0.3s;
+}
+
+/* Checked State (Dark Mode) */
+input:checked + .slider {
+  background-color: #2b2b2b; /* Dark background */
+}
+
+input:checked + .slider:before {
+  transform: translateX(36px); /* Move ball to right */
+  background-color: #3b5bdb; /* Ball becomes blue in dark mode */
+}
+
+/* Toggle Icon Visibility */
+input:checked + .slider .icon-sun {
+  opacity: 0.5;
+}
+
+input:checked + .slider .icon-moon {
+  opacity: 1;
+  color: white;
+}

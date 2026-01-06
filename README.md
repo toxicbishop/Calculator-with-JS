@@ -20,7 +20,7 @@
 </table>
 
 
-<h2 align="center">Calculator-1 Theme</h2>
+<h2 align="center">Calculator-2 Theme</h2>
 
 <table align="center">
   <tr>

@@ -1,37 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator App</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    
+
     <div class="controls">
-        <button id="history-toggle" onclick="toggleHistory()">📜 History</button>
-        <button id="sci-toggle" onclick="toggleScientificMode()">⚗️ Scientific Mode</button>
+        <button id="history-toggle" onclick="toggleHistory()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+            History
+        </button>
+        <button id="sci-toggle" onclick="toggleScientificMode()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path
+                    d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
+                </path>
+            </svg>
+            Scientific
+        </button>
         <div class="theme-switch-wrapper">
-           <label class="theme-switch" for="checkbox">
+            <label class="theme-switch" for="checkbox">
                 <input type="checkbox" id="checkbox" />
                 <div class="slider round">
-                    <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-                    <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                    <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
                 </div>
             </label>
         </div>
     </div>
 
     <div id="calculator-app">
-        <input id="display" readonly />
-        
+        <input id="display" readonly placeholder="0" />
+
         <div id="history-panel">
             <div class="history-header">
-                <span>Recent Calculations</span>
-                <button onclick="clearHistory()" class="clear-hist-btn">Clear</button>
+                <h2>History</h2>
+                <button onclick="clearHistory()" class="clear-hist-btn">Clear All</button>
             </div>
             <ul id="history-list">
-                </ul>
+                <!-- History items will be injected here -->
+            </ul>
         </div>
 
         <div id="keys">
@@ -41,41 +75,48 @@
                 <button onclick="appendToDisplay('tan(')" class="sci-btn">tan</button>
                 <button onclick="appendToDisplay('log(')" class="sci-btn">log</button>
                 <button onclick="appendToDisplay('ln(')" class="sci-btn">ln</button>
-                <button onclick="appendToDisplay('^')" class="sci-btn">^</button>
+                <button onclick="appendToDisplay('^')" class="sci-btn">xʸ</button>
                 <button onclick="appendToDisplay('√(')" class="sci-btn">√</button>
-                <button onclick="appendToDisplay('!')" class="sci-btn">!</button>
+                <button onclick="appendToDisplay('!')" class="sci-btn">x!</button>
                 <button onclick="appendToDisplay('(')" class="sci-btn">(</button>
                 <button onclick="appendToDisplay(')')" class="sci-btn">)</button>
                 <button onclick="appendToDisplay('π')" class="sci-btn">π</button>
                 <button onclick="appendToDisplay('e')" class="sci-btn">e</button>
             </div>
 
-            <div id="operators">
-                <button onclick="clearDisplay()" class="operator-btn" style="background-color: #ff6b6b;">AC</button>
-                <button onclick="deleteLast()" class="operator-btn" style="background-color: #ff9f43;">DEL</button>
+            <div class="main-pad">
+                <!-- Row 1 -->
+                <button onclick="clearDisplay()" class="operator-btn">AC</button>
+                <button onclick="deleteLast()" class="operator-btn">DEL</button>
                 <button onclick="appendToDisplay('/')" class="operator-btn">÷</button>
                 <button onclick="appendToDisplay('*')" class="operator-btn">×</button>
-                <button onclick="appendToDisplay('-')" class="operator-btn">-</button>
-                <button onclick="appendToDisplay('+')" class="operator-btn">+</button>
-            </div>
 
-            <div id="numbers">
+                <!-- Row 2 -->
                 <button onclick="appendToDisplay('7')">7</button>
                 <button onclick="appendToDisplay('8')">8</button>
                 <button onclick="appendToDisplay('9')">9</button>
+                <button onclick="appendToDisplay('-')" class="operator-btn">-</button>
+
+                <!-- Row 3 -->
                 <button onclick="appendToDisplay('4')">4</button>
                 <button onclick="appendToDisplay('5')">5</button>
                 <button onclick="appendToDisplay('6')">6</button>
+                <button onclick="appendToDisplay('+')" class="operator-btn">+</button>
+
+                <!-- Row 4 -->
                 <button onclick="appendToDisplay('1')">1</button>
                 <button onclick="appendToDisplay('2')">2</button>
                 <button onclick="appendToDisplay('3')">3</button>
+                <button onclick="calculate()" class="btn-equal">=</button>
+
+                <!-- Row 5 -->
+                <button onclick="appendToDisplay('0')" class="btn-zero">0</button>
                 <button onclick="appendToDisplay('.')">.</button>
-                <button onclick="appendToDisplay('0')">0</button>
-                <button onclick="calculate()" style="background-color: #4cd137;">=</button>
             </div>
         </div>
     </div>
 
     <script src="app.js"></script>
 </body>
+
 </html>

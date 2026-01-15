@@ -73,6 +73,11 @@ function calculate() {
 
 // --- HISTORY LOGIC ---
 function addToHistory(expr, res) {
+    // Remove placeholder if it's the first item
+    if (historyList.querySelector('div')) {
+        historyList.innerHTML = '';
+    }
+
     const li = document.createElement('li');
     li.className = 'history-item';
     li.innerHTML = `
@@ -85,7 +90,7 @@ function addToHistory(expr, res) {
         display.value = res;
         toggleHistory(); // Close history view
     };
-
+    
     // Add to top of list
     historyList.prepend(li);
 }
@@ -93,16 +98,10 @@ function addToHistory(expr, res) {
 function toggleHistory() {
     calcApp.classList.toggle('history-mode');
     histBtn.classList.toggle('active');
-    
-    if (calcApp.classList.contains('history-mode')) {
-        histBtn.innerText = "Back to Keys";
-    } else {
-        histBtn.innerText = "📜 History";
-    }
 }
 
 function clearHistory() {
-    historyList.innerHTML = '';
+    historyList.innerHTML = '<div style="text-align:center; padding: 20px; color: #64748b;">No history yet</div>';
 }
 
 
@@ -110,12 +109,6 @@ function clearHistory() {
 function toggleScientificMode() {
     calcApp.classList.toggle('expanded');
     toggleBtn.classList.toggle('active');
-
-    if (calcApp.classList.contains('expanded')) {
-        toggleBtn.innerText = "⚗️ Mode: ON";
-    } else {
-        toggleBtn.innerText = "⚗️ Scientific Mode";
-    }
 }
 
 // --- THEME SWITCHING ---
@@ -144,3 +137,29 @@ function switchTheme(e) {
 }
 
 toggleSwitch.addEventListener('change', switchTheme);
+
+// --- KEYBOARD SUPPORT ---
+document.addEventListener('keydown', (e) => {
+    const key = e.key;
+
+    // Numbers & Basic Operators
+    if (/[0-9\+\-\*\/\.\(\)\^]/.test(key)) {
+        e.preventDefault();
+        appendToDisplay(key);
+    } 
+    // Enter for Result
+    else if (key === 'Enter') {
+        e.preventDefault();
+        calculate();
+    } 
+    // Backspace for Delete
+    else if (key === 'Backspace') {
+        e.preventDefault();
+        deleteLast();
+    } 
+    // Escape or 'c' for Clear
+    else if (key === 'Escape' || key.toLowerCase() === 'c') {
+        e.preventDefault();
+        clearDisplay();
+    }
+});

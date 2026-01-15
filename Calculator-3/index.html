@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum Calc - Precision & Elegance</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <div class="calculator-container">
+        <div class="calculator-glass">
+            <div class="display-section">
+                <input type="text" id="screen" placeholder="0" readonly>
+            </div>
+
+            <div class="keypad">
+                <div class="row">
+                    <button class="btn-clear" onclick="backspc()">CE</button>
+                    <button class="btn-op" onclick="fact()">x!</button>
+                    <button class="btn-op" onclick="addText('(')">(</button>
+                    <button class="btn-op" onclick="addText(')')">)</button>
+                    <button class="btn-op" onclick="addText('%')">%</button>
+                    <button class="btn-ac" onclick="clearAll()">AC</button>
+                </div>
+
+                <div class="row">
+                    <button class="btn-func" onclick="sin()">sin</button>
+                    <button class="btn-func" onclick="pi()">π</button>
+                    <button class="btn-num" onclick="addText('7')">7</button>
+                    <button class="btn-num" onclick="addText('8')">8</button>
+                    <button class="btn-num" onclick="addText('9')">9</button>
+                    <button class="btn-op" onclick="addText('÷')">÷</button>
+                </div>
+
+                <div class="row">
+                    <button class="btn-func" onclick="cos()">cos</button>
+                    <button class="btn-func" onclick="log()">log</button>
+                    <button class="btn-num" onclick="addText('4')">4</button>
+                    <button class="btn-num" onclick="addText('5')">5</button>
+                    <button class="btn-num" onclick="addText('6')">6</button>
+                    <button class="btn-op" onclick="addText('×')">×</button>
+                </div>
+
+                <div class="row">
+                    <button class="btn-func" onclick="tan()">tan</button>
+                    <button class="btn-func" onclick="sqrt()">√</button>
+                    <button class="btn-num" onclick="addText('1')">1</button>
+                    <button class="btn-num" onclick="addText('2')">2</button>
+                    <button class="btn-num" onclick="addText('3')">3</button>
+                    <button class="btn-op" onclick="addText('-')">-</button>
+                </div>
+
+                <div class="row">
+                    <button class="btn-func" onclick="e()">e</button>
+                    <button class="btn-func" onclick="pow()">x²</button>
+                    <button class="btn-num" onclick="addText('0')">0</button>
+                    <button class="btn-num" onclick="addText('.')">.</button>
+                    <button class="btn-eval" onclick="calculate()">=</button>
+                    <button class="btn-op" onclick="addText('+')">+</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

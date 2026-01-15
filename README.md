@@ -32,7 +32,7 @@
     </td>
     <td align="center">
       <a href="Photos-Folder/Calculator-2-Scientific.png">
-        <img src="Photos-Folder/Calculator-2-Scientific.png" alt="Calculator-2-Scientific" width="300">
+        <img src="Photos-Folder/Calculator-2-scientific.png" alt="Calculator-2-Scientific" width="300">
       </a>
       <br>
       <em>Scientific Mode</em>

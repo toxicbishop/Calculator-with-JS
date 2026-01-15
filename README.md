@@ -39,3 +39,33 @@
     </td>
   </tr>
 </table>
+
+<h2 align="center">Calculator-3 Theme</h2>
+
+<table align="center">
+  <tr>
+    <td align="center">
+      <a href="Photos-Folder/Calculator-3-Standard.png">
+        <img src="Photos-Folder/Calculator-3-Standard.png" alt="Calculator-3-Standard" width="300">
+      </a>
+      <br>
+      <em>Standard Mode</em>
+    </td>
+    <td align="center">
+      <a href="Photos-Folder/Calculator-3-Scientific.png">
+        <img src="Photos-Folder/Calculator-3-Scientific.png" alt="Calculator-3-Scientific" width="300">
+      </a>
+      <br>
+      <em>Scientific Mode</em>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" colspan="2">
+      <a href="Photos-Folder/Calculator-3-Glass.png">
+        <img src="Photos-Folder/Calculator-3-Glass.png" alt="Calculator-3-Glass" width="300">
+      </a>
+      <br>
+      <em>Glassmorphism Theme</em>
+    </td>
+  </tr>
+</table>
